@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tìm kiếm thông tin sinh viên</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+
+</head>
+<body>
+    
+    <h2 style="text-align: center">Tìm kiếm thông tin</h2>
+    <a href = "/">Nhập thông tin sinh viên</a>
+
+    <div>
+        <form action="/search", method="POST">
+            <!-- <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Tên sinh viên..."> -->
+
+            <label for="mssv">Mã số sinh viên</label>
+            <input type="text" id="mssv" name="mssv" placeholder="Mã số sinh viên...">
+
+            <!-- <label for="class">Lớp</label>
+            <input type="text" id="class" name="class" placeholder="Lớp...">
+
+            <label for="faculty">Khoa</label>
+            <input type="text" id="faculty" name="faculty" placeholder="Khoa...">
+
+            <label for="year">Năm học</label>
+            <select id="year" name="year" placeholder="Năm học..."">
+            <option value="default" selected>Năm</option>
+                <% let date = new Date() %>
+                <% for(let i= 2006; i <= (date.getFullYear() + 1); i++) { %>
+            <option value="<%- i %>"><%- i %></option>
+                <% } %>
+            </select>
+
+            <label for="month">Tháng</label>
+            <select id="month" name="month"">
+            <option value="default" selected>Tháng</option>
+                <% for(let i= 1; i < 13; i++) { %>
+            <option value="<%- i %>"><%- i %></option>
+                <% } %>
+            </select> -->
+            <input type="submit" value="Find">
+        </form>
+    </div>
+    <ul>
+        <% info.forEach(function( eachPerson){ %>
+            <li> Tên: <%= eachPerson.name %> <br> Lớp: <%= eachPerson.class %> <br> MSSV: <%= eachPerson.mssv %> <br> Khoa: <%=eachPerson.faculty%> <br> Năm học: <%=eachPerson.month%>-<%=eachPerson.year%>  </li>
+        <% }) %>
+     
+    </ul>
+
+
+</body>
+</html>

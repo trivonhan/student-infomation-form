@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello world</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+    <h2 style="text-align: center">Form Sinh viên</h2>
+
+<div>
+  <form action="/", method="POST">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" placeholder="Tên sinh viên...">
+
+    <label for="mssv">Mã số sinh viên</label>
+    <input type="text" id="mssv" name="mssv" placeholder="Mã số sinh viên...">
+
+    <label for="class">Lớp</label>
+    <input type="text" id="class" name="class" placeholder="Lớp...">
+
+    <label for="faculty">Khoa</label>
+    <input type="text" id="faculty" name="faculty" placeholder="Khoa...">
+
+    <label for="year">Năm học</label>
+    <select id="year" name="year" placeholder="Năm học..."">
+      <option value="default" selected>Năm</option>
+        <% let date = new Date() %>
+        <% for(let i= 2006; i <= (date.getFullYear() + 1); i++) { %>
+        <option value="<%- i %>"><%- i %></option>
+      <% } %>
+    </select>
+
+    <label for="month">Tháng</label>
+    <select id="month" name="month"">
+      <option value="default" selected>Tháng</option>
+      <% for(let i= 1; i < 13; i++) { %>
+        <option value="<%- i %>"><%- i %></option>
+      <% } %>
+    </select>
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+<div>
+  <a href="/search">Tìm kiếm sinh viên</a>
+</div>
+</body>
+
+</html>
